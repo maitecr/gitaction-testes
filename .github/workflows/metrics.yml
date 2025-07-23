@@ -1,0 +1,13 @@
+name: Get Metrics
+on: [push]
+jobs:
+    get-metric-job:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code       # Clonar o próprio repositório na máquina do github, pois o github só tem a definição do workflow
+              uses: actions/checkout@v4
+              
+            - name: Print Data Metric
+              run: gh repo view DesignLiquido/delegua --json stargazerCount,watchers,forkCount
+          
