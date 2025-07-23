@@ -13,10 +13,10 @@ jobs:
                 echo "### Count: Stargazer, Watchers e Fork ###"
                 gh repo view DesignLiquido/delegua --json stargazerCount,watchers,forkCount
 
-                echo "### Último release ###"
+                echo "### Last release ###"
                 gh release view --repo DesignLiquido/delegua
 
-                echo "### Stargazers List"
+                echo "### Stargazers List ###"
                 gh api repos/DesignLiquido/delegua/stargazers
 
                 echo "### Contributors Count ###"
