@@ -7,7 +7,9 @@ jobs:
         steps:
             - name: Checkout code       # Clonar o próprio repositório na máquina do github, pois o github só tem a definição do workflow
               uses: actions/checkout@v4
-              
+
             - name: Print Data Metric
               run: gh repo view DesignLiquido/delegua --json stargazerCount,watchers,forkCount
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
