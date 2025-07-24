@@ -21,10 +21,9 @@ jobs:
 
                 echo "### Issues Count - OPEN ###"
                 gh api 'search/issues?q=repo:DesignLiquido/delegua+is:issue+is:open' --jq '.total_count'
-                # gh issue list --repo DesignLiquido/delegua --state open --limit 1000 | wc -l
 
                 echo "### Issues Count - CLOSED ###"
-                gh issue list --repo DesignLiquido/delegua --state closed --limit 1000 | wc -l
+                gh api 'search/issues?q=repo:DesignLiquido/delegua+is:issue+is:closed' --jq '.total_count'
 
                 echo "### PR Count - OPEN ###"
                 gh pr list --repo DesignLiquido/delegua --state open --limit 1000 | wc -l
