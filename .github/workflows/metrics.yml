@@ -35,6 +35,7 @@ jobs:
                 gh api repos/DesignLiquido/delegua/community/profile >> metrics.json
                 gh repo view DesignLiquido/delegua --json isSecurityPolicyEnabled >> metrics.json
 
+                echo "### JSON ###"
                 cat metrics.json
 
               env:
