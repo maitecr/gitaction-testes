@@ -8,7 +8,7 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
 
-            - name: Print Repo Data Metric
+            - name: Create Json File with Repo Data Metric
               run: | 
                 echo "### Count: Stargazer, Watchers & Fork ###"
                 STATS=$(gh repo view DesignLiquido/delegua --json stargazerCount,watchers,forkCount)
@@ -71,4 +71,10 @@ jobs:
 
               env:
                 GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              
+            - name: Upload JSON as Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: metrics-json
+                path: metrics.json
           
